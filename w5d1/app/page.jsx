@@ -3,9 +3,10 @@ import { useState } from 'react'
 import { createWalletClient, createPublicClient, custom, http, parseEther, formatEther } from 'viem'
 import { sepolia } from 'viem/chains'
 import erc20abi from "../lib/abi";
+import 'dotenv/config'
 
 const tokenAddress = '0xa7d726B7F1085F943056C2fB91abE0204eC6d6DA'
-const RPC_URL = 'https://sepolia.infura.io/v3/4599d96961934f2e9a1fd3828bd78a73'
+const RPC_URL = process.env.RPC_URL
 
 export default function Page() {
   const [account, setAccount] = useState(null)
